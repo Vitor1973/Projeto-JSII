@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jantar a Dois</title>
+    <style>
+        body {
+            background: aqua;
+        }
+    </style>
+    <h1>Utilizando o método toFixed(2) com duas casas decimais</h1>
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">Link metodo toFixed()</a>
+</head>
+<body>
+    <script>
+        const jantar = Number(prompt('Valor Jantar R$ '));
+        const garcon = jantar * 0.10;
+        const total = jantar + garcon;
+
+        alert(`Valor do jantar ${jantar.toFixed(2)}\ Taxa do garcon ${garcon.toFixed(2)}\ Total da Conta é: ${total.toFixed(2)}`) 
+        //alert(`Taxa do garcon: ${garcon.toFixed(2)}\ Total da conta: ${total.toFixed(2)}`)
+
+
+        //Consegui resolver sozinho este problema !!!!! Muito Bacana !!
+    </script>
+    
+</body>
+</html>
