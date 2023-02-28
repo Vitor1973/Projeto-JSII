@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+    <style>
+        body {
+            color: antiquewhite;
+            font: 18px Arial;
+            background-color: black;
+        }
+    </style>
+    <h1 style="color:gray">Filmes em Cartaz: </h1>
+    <form>
+        <p>Título do Filme:</p>
+        <input type="text" id="text" required> <!--required == obrigatorio-->
+        <p>Duração minutos:
+        <input type="number" id="duracao" required></p>
+        <input type="submit" value="Converter em horas e minutos">
+    </form>
+    <h2></h2>
+    <h3></h3>
+</head>
+<body>
+    <script>
+        //cria referencia ao form e aos elementos h3 e h4 (resposta)
+        var formulario = document.querySelector('form');
+        var resp1 = document.querySelector('h2');
+        var resp2 = document.querySelector('h3');
+
+        const p1 = document.querySelector('p') // Muda a cor da tag p para azul //APRIMORAMENTO
+        //p1.style.color = 'blue';
+        p1.style.font = '28px Arial';
+        //p1.style.backgroundColor = 'white' // Funciona mais fica muito feio
+
+        const h1 = document.querySelector('h1'); 
+        h1.style.color = 'green'; // Muda a cor da tag h1 
+        //h1.style.border = '2px solid red';
+        //h1.style.padding = '30px';
+
+        const h2 = document.querySelector('h2');
+        h2.style.color = 'red' // Muda a cor da tag h2 
+       
+
+
+        //cria um ouvinte de evento, acionando quando o botão submit for clicado
+        formulario.addEventListener("submit", (enviar) => {
+            const titulo = formulario.text.value; // obtém os conteudos dos campos
+            const duracao = Number(formulario.duracao.value); // obtém o conteudo numerico do campo.
+
+            const horas = Math.floor(duracao/60); //O Math.floor()método estático sempre arredonda para baixo e retorna o maior inteiro menor ou igual a um determinado número.
+            const minutos = duracao % 60;
+
+            resp1.innerHTML = titulo;
+            resp2.innerHTML = `${horas} hora(s) e ${minutos} minuto(s)`;
+
+            enviar.preventDefault();
+
+        })
+
+    </script>
+    
+</body>
+</html>

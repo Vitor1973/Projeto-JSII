@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+</head>
+<body>
+	<h1>Calculadora</h1>
+	<form>
+		<input type="text" id="resultado" name="resultado" value="0">
+		<table>
+			<tr>
+				<td><input type="button" value="7" onclick="concatenarValor('7')"></td>
+				<td><input type="button" value="8" onclick="concatenarValor('8')"></td>
+				<td><input type="button" value="9" onclick="concatenarValor('9')"></td>
+				<td><input type="button" value="+" onclick="adicionar()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onclick="concatenarValor('4')"></td>
+				<td><input type="button" value="5" onclick="concatenarValor('5')"></td>
+				<td><input type="button" value="6" onclick="concatenarValor('6')"></td>
+				<td><input type="button" value="-" onclick="subtrair()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onclick="concatenarValor('1')"></td>
+				<td><input type="button" value="2" onclick="concatenarValor('2')"></td>
+				<td><input type="button" value="3" onclick="concatenarValor('3')"></td>
+				<td><input type="button" value="*" onclick="multiplicar()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" onclick="concatenarValor('0')"></td>
+				<td><input type="button" value="." onclick="concatenarValor('.')"></td>
+				<td><input type="button" value="C" onclick="limpar()"></td>
+				<td><input type="button" value="/" onclick="dividir()"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="button" value="=" onclick="calcular()"></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		var valor1 = null;
+		var operacao = null;
+
+		function concatenarValor(valor) {
+			if (document.getElementById('resultado').value == '0') {
+				document.getElementById('resultado').value = valor;
+			} else {
+				document.getElementById('resultado').value += valor;
+			}
+		}
+
+		function adicionar() {
+			valor1 = parseFloat(document.getElementById('resultado').value);
+			operacao = '+';
+			document.getElementById('resultado').value = '';
+		}
+
+		function subtrair() {
+			valor1 = parseFloat(document.getElementById('resultado').value);
+			operacao = '-';
+			document.getElementById('resultado').value = '';
+		}
+
+		function multiplicar() {
+			valor1 = parseFloat(document.getElementById('resultado').value = ''
+        }

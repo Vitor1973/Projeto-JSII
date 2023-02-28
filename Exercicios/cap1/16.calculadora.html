@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salário</title>
+    <h1>Calculadora Simples</h1>
+    <img src="C:\Users\NBOM30-05597\Desktop\Curso Livro Logica de Programacao\Exercicios\img.jpg\calculadora.avif" alt="200" height="150">
+    <style>
+        body {
+            bottom: blue;
+            input-security: black;
+            background-color: aqua;
+            font-size: xx-large;
+            color:black
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        const salarioBruto = Number(prompt('Digite o salario bruto: '));
+        const descontos = Number(prompt('Soma de descontos: '));
+        const previdencia = (salarioBruto  * 0.725) - descontos;
+    
+        alert(`Salario Bruto ${salarioBruto.toFixed(2)}\ Descontos R$ ${descontos.toFixed(2)}\ Total Líquido R$ ${previdencia.toFixed()}`)
+        document.write(`Salario Bruto ${salarioBruto.toFixed(2)}\ Descontos R$ ${descontos.toFixed(2)}\ Total Líquido R$ ${previdencia.toFixed()}`)
+    
+    </script>
+    
+</body>
+</html>

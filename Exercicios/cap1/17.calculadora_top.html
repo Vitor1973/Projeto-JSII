@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <img src="C:\Users\NBOM30-05597\Desktop\Curso Livro Logica de Programacao\Exercicios\img.jpg\calculadora 1.jpg" alt="200" height="150">
+    <style>
+        body {
+            bottom: blue;
+            input-security: black;
+            background-color: aqua;
+            font-size: xx-large;
+            color:black
+        }
+    </style>
+    <form>
+        <input type="text" id="resultado" name="resultado" value="0">
+        <table>
+            <tr>
+                <td><input type="button" value="7" onclick="concatenaValor('7')"></td>
+                <td><input type="button" value="8" onclick="concatenaValor('8')"></td>
+                <td><input type="button" value="9" onclick="concatenaValor('9')"></td>
+                <td><input type="button" value="+" onclick="adicionar()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="6" onclick="concatenaValor('6')"></td>
+                <td><input type="button" value="5" onclick="concatenaValor('5')"></td>
+                <td><input type="button" value="4" onclick="concatenaValor('4')"></td>
+                <td><input type="button" value="-" onclick="subtrair()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="3" onclick="concatenaValor('3')"></td> <!--O elemento HTML define uma célula de uma tabela que contém dados. Participa do modelo de tabela .<td>-->
+                <td><input type="button" value="2" onclick="concatenaValor('2')"></td>
+                <td><input type="button" value="1" onclick="concatenaValor('1')"></td>
+                <td><input type="button" value="*" onclick="multiplicar()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="concatenaValor('0')"></td>
+                <td><input type="button" value="." onclick="concatenaValor('.')"></td>
+                <td><input type="button" value="C" onclick="limpar()"></td>
+                <td><input type="button" value="/" onclick="dividir()"></td>
+
+            </tr>
+        </table>
+    </form>
+</head>
+<body>
+    <script>
+        const valor1 = null; // O valor "null" em JavaScript é utilizado para representar a ausência intencional de qualquer valor de objeto. Em outras palavras, "null" significa que a variável não tem nenhum valor ou que o valor é desconhecido.
+        const operacao = null;
+
+        function concatenarValor(valor) {
+			if (document.getElementById('resultado').value == '0') {
+				document.getElementById('resultado').value = valor;
+			} else {
+				document.getElementById('resultado').value += valor;
+			}
+		}
+        function adicionar() {
+			valor1 = parseFloat(document.getElementById('resultado').value);
+			operacao = '+';
+			document.getElementById('resultado').value = '';
+		}
+        function subtrair() {
+			valor1 = parseFloat(document.getElementById('resultado').value);
+			operacao = '-';
+			document.getElementById('resultado').value = '';
+		}
+
+    </script>
+    
+</body>
+</html>

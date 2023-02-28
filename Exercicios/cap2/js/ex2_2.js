@@ -4,7 +4,7 @@ const resp1 = document.querySelector('h3');
 const resp2 = document.querySelector('h4');
 
 //cria um ouvinte de evento, acionando quando o botão submit for clicado
-frm.addEventListener("submit", (e) => {
+frm.addEventListener("submit", (enviar) => {
     const titulo = frm.inTitulo.value  // obtém os conteudos dos campos
     const duracao = Number(frm.inDuracao.value)
 
@@ -14,5 +14,5 @@ frm.addEventListener("submit", (e) => {
     resp1.innerText = titulo  // exibe as respostas
     resp2.innerText = `${horas} hora(s) e ${minutos} minuto(s)`
 
-    e.preventDefault()            // evita envio ao form
+    enviar.preventDefault()            // evita envio ao form
 })

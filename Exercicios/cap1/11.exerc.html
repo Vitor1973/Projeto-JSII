@@ -3,18 +3,20 @@
 e quantos clientes vão pagá-la. Calcule e informe o valor a ser pago por cliente.
 Ex: Valor da Conta: R$ 60.00
    -->
+   <h1>Restaurante do Japoneisss tudo caro e ruim né....</h1>
+   <h2><strong>Obrigado e volte sempre seus <h3>Abençoados !!!</h3></strong></h2>
+<style>
+       body {
+           background-color: rgb(15, 174, 237);
+           font-size: large;
+       }
+</style>    
 <script>
     const valor = Number(prompt('Valor da conta: '));
+    const garcom = valor * .10
     const pessoas = Number(prompt('Total de clientes: '))
-    const total = valor / pessoas
+    const total = (valor + garcom) / pessoas
+    
 
-    alert(`Total da Conta R$ ${valor.toFixed(2)} Número de clientes: ${pessoas} Valor por cliente R$ ${total.toFixed(2)}`)
+    alert(`Total da Conta R$ ${valor.toFixed(2)}\ Taxa do garçom R$ ${garcom.toFixed(2)}\ Valor por pessoa: ${pessoas}pessoa(s)\ Valor por cliente R$ ${total.toFixed(2)}`)
 </script>
-    <h1>Obrigado e volte sempre !!!</h1>
-    <h2><strong>Pizzaria do Bairro</strong></h2>
-<style>
-        body {
-            background-color: rgb(52, 11, 165);
-            font-size: large;
-        }
-</style>    
