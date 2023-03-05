@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada e Saída</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+    <form >
+        <h1>Entradas e Saídas</h1>
+            <p>
+                <input type="text" id="inName">
+                <input type="submit" value="Nome">
+                <input type="text" id="inIdade">
+                <input type="submit" value="Idade">
+                <input type="text" id="inCpf">
+                <input type="submit" value="CPF">
+                <input type="text" id="inEmail">
+                <input type="submit" value="Email">
+                <input type="text" id="inendereco">
+                <input type="submit" value="Endereço">
+            </p>
+                           
+    </form>
+        <h3></h3>
+        <h4></h4>
+        <h5></h5>
+        <h6></h6>
+        <h7></h7>
+</head>
+<body>
+    <script>
+        const frm = document.querySelector('form');
+        const resp = document.querySelector('h3');
+
+        frm.addEventListener('submit', (e) => {
+          const nome = frm.inName.value;
+          resp.innerHTML = `Nome ${nome}`; 
+          const idade = frm.inIdade.value;
+          resp.innerHTML = `idade ${idade}`; 
+          const cpf = frm.inCpf.value;
+          resp.innerHTML = `cpf ${cpf}`; 
+          e.preventDefault() 
+        })
+
+        //const frm1 = document.querySelector('form');
+        //const resp1 = document.querySelector('h4');
+
+        //frm.addEventListener('submit', (a) => {
+          //const idade = frm.inIdade.value;
+          //resp.innerHTML = `idade ${idade}`; 
+          //a.preventDefault() 
+        //})
+
+    </script>
+    
+</body>
+</html>
