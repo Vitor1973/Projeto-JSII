@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenda Veiculos</title>
+</head>
+<style>
+    h1 {
+
+        font: 25pt arial;
+        color: red;
+    }
+
+    body {
+        background-color: aqua;
+    } 
+    p {
+
+        font-family: "helvetica neue", helvetica, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: left;
+        display: inline-block;
+        border-radius: 10px;
+       
+           
+    }
+</style>
+<body>
+    <h1>Revenda de Veiculos Vitus Car</h1>
+    <form >
+        <p> Veículo Modelo:
+            <input type="text" name="inVeiculo" id="inVeiculo" required>
+        </p>
+        <p>Valor R$
+            <input type="number" id="inPreco" required>
+        </p>
+        <p>Promoção
+        <input type="submit" value="Ver Promoção">
+        </p>
+    </form>
+    <h3 id="outResp1"></h3>
+    <h4 id="outResp2"></h4>
+    <h5 id="outResp3"></h5>
+    <h6 id="outResp4"></h6>
+    <script>
+        // cria referencia ao form e aos elementos de resposta pelo id
+        const frm = document.querySelector("form");
+        const resp1 = document.querySelector("#outResp1");
+        const resp2 = document.querySelector("#outResp2");
+        const resp3 = document.querySelector("#outResp3");
+        const resp4 = document.querySelector("#outResp4");
+        
+        //cria um ouvinte de evento, acionando quando o botão submit for clicado
+
+        frm.addEventListener("submit", (e) => { // https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener
+            const veiculo = frm.inVeiculo.value // obtém os conteudos dos campos
+            const preco = Number(frm.inPreco.value);  
+
+            const entrada = preco * 0.3;  // calcula o valor de entrada
+            const parcela = (preco - entrada)/ 12;  // calcula valor das parcelas
+            const total = preco;
+
+            resp1.innerText = `Promoção: ${veiculo}`;
+            resp2.innerText = `Entrada de 30% R$: ${entrada.toFixed(2)}`;
+            resp3.innerText = `+ 12 parcelas sem juros de R$: ${parcela.toFixed(2)}`;
+            resp4.innerText = `Totalizando o valor de R$ ${total.toFixed(2)}`;
+
+
+
+            e.preventDefault()  // evita envio ao form
+        })
+
+    </script>
+</body>
+</html>

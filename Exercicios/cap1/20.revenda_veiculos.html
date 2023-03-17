@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenda Top</title>
+    <style>
+        body {
+            color: cadetblue;
+            font: 20pt Arial;
+        }
+        input:hover {
+            background-color: #23c150;
+            border: 2px solid #eae6e6;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h2>Revenda de Veículos Usados Nacionais e Importados</h2>
+    <form>
+        <p>
+            Carros ou Motos:
+            <input type="text" name="Text" id="inVeiculo" required>
+        </p>
+        <p>
+            Valor Total:
+            <input type="number" id="inValor" required>
+        </p>
+        <p>
+            Verificar:
+            <input type="submit" value="Verificar">
+        </p>
+
+    </form>
+    <h3 id="resp1"></h3>
+    <h3 id="resp2"></h3>
+    <h3 id="resp3"></h3>
+    <script>
+        const frm = document.querySelector('form');
+        const resp1 = document.querySelector('#resp1');
+        const resp2 = document.querySelector('#resp2');
+        const resp3 = document.querySelector('#resp3');
+
+        frm.addEventListener("submit", (e) => {
+            const veiculo = frm.inVeiculo.value;
+            const preco = Number(frm.inValor.value);
+
+            const entrada = preco * 0.5;
+            const parcela = (preco - entrada)/ 24;
+
+
+            resp1.innerText = `Promoção ${veiculo}`;
+            resp2.innerText = `Entrada de 50% R$ ${entrada.toFixed(2)}`;
+            resp3.innerText = `+ 24 Parcelas de ${parcela.toFixed(2)}`
+
+
+            e.preventDefault();
+
+        })
+
+    </script>
+    
+</body>
+</html>
