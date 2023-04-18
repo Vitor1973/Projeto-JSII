@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmacia JS</title>
 </head>
+<style>
+     body {
+            color: rgb(24, 24, 22);
+            font: 15pt Arial;
+        }
+</style>
 <body>
     <h1>Farmacia JS</h1>
     <form>
@@ -13,17 +19,45 @@
             <input type="text" id="inMedicamento" required>
         </p>
         <p>Preço: 
-            <input type="number" id="inPreco" required>
+            <input type="number" id="inPreco" placeholder="R$0,00" required>
         </p>
-        <input type="submit" value="Mostrar Promoção" required>
+        <p>Quantidade: 
+            <input type="number" id="inQuantidade" placeholder="0" required>
+        </p>
+        <input type="submit">
 
     </form>
     <h3></h3>
     <script>
-        const form = document.querySelector("form")
-        
+        // Cria refencia ao form e ao elemento h3 onde será exibida a resposta
+        const frm = document.querySelector("form")
+        const resp1 = document.querySelector("h3");  //referencia resp
+        const resp2 = document.querySelector("h3")
+        const resp3 = document.querySelector("h3")
+        const resp4 = document.querySelector("h3")
+
+        frm.addEventListener("submit", (e) => {
+            const medicamento = frm.inMedicamento.value;
+            const preco = Number(frm.inPreco.value);
+            const quantidade = Number(frm.inQuantidade.value);
+
+            const desconto = preco * 0.9;
+            const total =  desconto * quantidade;
+            //const precoCheio =  preco * quantidade;
+
+            resp1.innerText = `Promoção de ${medicamento}`;
+            resp2.innerText = `Leve 3 por apenas R$ ${desconto.toFixed(2)} cada`;
+            resp3.innerHTML = `Total dos produtos R$ ${total.toFixed(2)}`;
+            //resp4.innerHTML = `Caso não opte pela promoçao o valor será de R$:${precoCheio.toFixed(2)}`
+
+            e.preventDefault();
+        })
 
     </script>
+     <h3>Condições de promoção:</h3>
+     <ul>
+         <li>Após a 03 unidade tenha um desconto de 10% do valor;</li>
+     </ul>  
     
 </body>
 </html>
